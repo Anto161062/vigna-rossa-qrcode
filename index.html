@@ -52,30 +52,25 @@
       color: #666;
       text-align: center;
     }
+
     #music-controls {
       margin-bottom: 20px;
       text-align: center;
     }
-    #toggleMusic {
-      background-color: #991b1b;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    #toggleMusic:hover {
-      background-color: #7c1515;
+
+    audio {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
   <div id="music-controls">
-    <button id="toggleMusic">▶️ Riproduci Musica</button>
-    <audio id="bg-music" loop>
-      <source src="https://files.freemusicarchive.org/file/music/no_curator/Chad_Crouch/Arps/Chad_Crouch_-_Arc_of_Sun.mp3" type="audio/mpeg">
+    <strong>🎵 Musica di accompagnamento:</strong><br>
+    <audio controls autoplay loop>
+      <source src="https://archive.org/download/jazz-in-paris/Jazz_In_Paris.mp3" type="audio/mpeg">
       Il tuo browser non supporta l'audio HTML5.
     </audio>
   </div>
@@ -126,21 +121,6 @@
     © MySenza – Emozioni naturali. <br>
     Scopri tutte le fragranze su mysenza.bio
   </footer>
-
-  <script>
-    const audio = document.getElementById('bg-music');
-    const btn = document.getElementById('toggleMusic');
-
-    btn.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play();
-        btn.textContent = '⏸️ Ferma Musica';
-      } else {
-        audio.pause();
-        btn.textContent = '▶️ Riproduci Musica';
-      }
-    });
-  </script>
 
 </body>
 </html>
